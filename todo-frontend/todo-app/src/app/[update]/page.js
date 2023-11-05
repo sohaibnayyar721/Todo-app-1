@@ -23,7 +23,7 @@ function Modal(props) {
         async function getData() {
 
             try {
-                let taskData = await fetch(`http://localhost:4500/${taskId}`, {
+                let taskData = await fetch(`https://to-do-app-henna-sigma.vercel.app/${taskId}`, {
                     method: "GET"
                 })
                 let data = await taskData.json()
@@ -61,7 +61,7 @@ function Modal(props) {
 
             try {
 
-                let update_task = await fetch(`http://localhost:4500/${taskId}`, {
+                let update_task = await fetch(`https://to-do-app-henna-sigma.vercel.app/${taskId}`, {
                     method: "PUT",
                     headers: {
                         "Content-type": "application/json",
