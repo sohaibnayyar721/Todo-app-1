@@ -95,6 +95,7 @@ export default function Todo() {
             // https://to-do-app-henna-sigma.vercel.app/update/completetask
             let update_task = await fetch("https://to-do-app-henna-sigma.vercel.app/update/completetask", {
                 method: "PUT",
+                mode: 'no-cors',
                 headers: {
                     "Content-type": "application/json"
                 },
