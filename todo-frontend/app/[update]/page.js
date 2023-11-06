@@ -23,7 +23,7 @@ function Modal(props) {
         async function getData() {
 
             try {
-                let taskData = await fetch(`https://to-do-app-henna-sigma.vercel.app/${taskId}`, {
+                let taskData = await fetch(`https://todo-app-server-eight.vercel.app/${taskId}`, {
                     method: "GET"
                 })
                 let data = await taskData.json()
