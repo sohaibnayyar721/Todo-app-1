@@ -3,11 +3,11 @@ const task = require('../taskSchema')
 const completeTask = async (req, res) => {
 
     try {
-        // const completeTask = req.body[1].completeTask
-        // const taskId = req.body[0].taskId
-        // const updateCompleteTask = await task.findByIdAndUpdate(
-        //     { _id: taskId }, { completed: completeTask }
-        // )
+        const completeTask = req.body[1].completeTask
+        const taskId = req.body[0].taskId
+        const updateCompleteTask = await task.findByIdAndUpdate(
+            { _id: taskId }, { completed: completeTask }
+        )
         res.json("task updated")
     } catch (err) {
         console.log("err")
