@@ -1,5 +1,5 @@
 {
-    "version":2,
+    "version": 2,
     "builds": [
         {
             "src": "index.js",
@@ -7,13 +7,20 @@
         }
     ],
     "rewrites": [
-        {"source": "/(.*)", "destination": "/index.js",
-        "headers": [
-            { "key": "Access-Control-Allow-Origin", "value": "*" }
-           
-          ]
-    }
- 
-
+        {
+            "source": "/(.*)",
+            "destination": "/index.js"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "*"
+                }
+            ]
+        }
     ]
-  }
+}
