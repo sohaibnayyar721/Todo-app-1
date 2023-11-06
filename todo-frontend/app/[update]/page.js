@@ -118,7 +118,7 @@ function Modal(props) {
                                     <div className='flex gap-2 mt-6'>
                                         <button className='border-[1px] text-white border-1  h-11 p-2 rounded  '
                                             onClick={() => UpdateTask(taskInput)}
-                                        >Update</button>
+                                        >Ok</button>
 
                                         <button className='border-[1px] text-white border-1 h-11 p-2 rounded '
                                             onClick={cancel}

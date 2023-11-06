@@ -7,7 +7,8 @@ const completeTask = async (req, res) => {
         const updateCompleteTask = await task.findByIdAndUpdate(
             { _id: taskId }, { completed: completeTask }
         )
-        await updateCompleteTask.save()  
+      
+        res.json("task updated")
     }catch(err){
         console.log("err")
     }
