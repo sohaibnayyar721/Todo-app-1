@@ -1,15 +1,14 @@
 const task = require('../taskSchema')
 
 const completeTask = async (req, res) => {
-    try{
-        const taskId = req.body[0].taskId
+    try {
         const completeTask = req.body[1].completeTask
+        const taskId = req.body[0].taskId
         const updateCompleteTask = await task.findByIdAndUpdate(
             { _id: taskId }, { completed: completeTask }
         )
-      
         res.json("task updated")
-    }catch(err){
+    } catch (err) {
         console.log("err")
     }
 }
@@ -92,7 +91,7 @@ const updateTask = async (req, res) => {
             if (!update_Task) {
                 res.json("Can't Update")
             }
-            return res.json( "task updated successfully" )
+            return res.json("task updated successfully")
         }
 
     }

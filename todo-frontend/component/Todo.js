@@ -100,8 +100,6 @@ export default function Todo() {
                 },
                 body: JSON.stringify([{ taskId: taskId }, { completeTask: !complete }])
             })
-
-
             setComplete(!complete)
         } catch (err) {
             setFail(false)
