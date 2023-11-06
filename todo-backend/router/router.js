@@ -7,7 +7,7 @@ router.get('/:getOneTask',getOneTask)
 router.post('/addTask',addTask)
 router.delete('/:deleteTask',deleteTask)
 router.put('/:updateTask',updateTask)
-router.get('/yellow',completeTask)
+router.get('/update/completetask',completeTask)
 router.all('*',(req,res)=>{
     res.send("Cant find any route")
 })
