@@ -27,7 +27,7 @@ export default function Todo() {
 
         async function getData() {
             try {
-                 let taskData = await fetch("https://to-do-app-henna-sigma.vercel.app/")
+                 let taskData = await fetch("https://to-do-app-henna-sigma.vercel.app")
                 if (!taskData.ok) {
                     alert("api error")
                 }
