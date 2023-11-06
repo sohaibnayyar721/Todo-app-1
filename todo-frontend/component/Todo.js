@@ -91,7 +91,7 @@ export default function Todo() {
 
     async function completeTask(taskId) {
 
-        try {
+       
             // https://to-do-app-henna-sigma.vercel.app/update/completetask
             let update_task = await fetch("https://to-do-app-henna-sigma.vercel.app/update/completetask", {
                 method: "PUT",
@@ -101,16 +101,11 @@ export default function Todo() {
                 },
                 body: JSON.stringify([{ taskId: taskId }, { completeTask: !complete }])
             })
-            if (update_task.ok) {
-                let response = await update_task.json()
+            let response = await update_task.json()
 
-            }
             setComplete(!complete)
-        }
-        catch (err) {
-            setFail(false)
-            setData("Server can not respond")
-        }
+       
+
 
     }
 
