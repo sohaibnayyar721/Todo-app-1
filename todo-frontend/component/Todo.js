@@ -95,10 +95,6 @@ export default function Todo() {
             // https://to-do-app-henna-sigma.vercel.app/update/completetask
             let update_task = await fetch("https://to-do-app-henna-sigma.vercel.app/update/completetask", {
                 method: "PUT",
-                
-                headers: {
-                    "Content-type": "application/json"
-                },
                 body: JSON.stringify([{ taskId: taskId }, { completeTask: !complete }])
             })
             let response = await update_task.json()
