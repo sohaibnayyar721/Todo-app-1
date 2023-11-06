@@ -2,9 +2,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Router, { useRouter } from 'next/navigation';
-import Video from '../component/Video';
-import Loader from '../component/Loader';
-import PageNotFound from '../component/PageNotFound';
+import Video from '../../component/Video';
+import Loader from '../../component/Loader';
+import PageNotFound from '../../component/PageNotFound';
 
 function Modal(props) {
 
