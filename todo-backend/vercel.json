@@ -7,7 +7,7 @@
         }
     ],
     "rewrites": [
-        {"src": "/(.*)", "dest": "/index.js",
+        {"source": "/(.*)", "destination": "/index.js",
         "headers": [
             { "key": "Access-Control-Allow-Origin", "value": "*" }
            
