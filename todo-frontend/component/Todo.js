@@ -92,7 +92,7 @@ export default function Todo() {
     async function completeTask(taskId) {
 
         try {
-            // https://to-do-app-henna-sigma.vercel.app/update/completetask
+            // https://todo-app-server-eight.vercel.app
             let update_task = await fetch("https://todo-app-server-eight.vercel.app/update/completetask", {
                 method: "PUT",
                 headers: {

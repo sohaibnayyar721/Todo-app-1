@@ -5,10 +5,14 @@ const completeTask = async (req, res) => {
     try {
         const completeTask = req.body[1].completeTask
         const taskId = req.body[0].taskId
+        console.log(completeTask)
+        console.log(req.body)
+
         const updateCompleteTask = await task.findByIdAndUpdate(
             { _id: taskId }, { completed: completeTask }
         )
         res.json("task updated")
+  
     } catch (err) {
         console.log("err")
     }
