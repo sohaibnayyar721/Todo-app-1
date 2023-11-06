@@ -27,7 +27,7 @@ export default function Todo() {
 
         async function getData() {
             try {
-                 let taskData = await fetch("https://to-do-app-henna-sigma.vercel.app/")
+                let taskData = await fetch("https://to-do-app-henna-sigma.vercel.app/")
                 if (!taskData.ok) {
                     alert("api error")
                 }
@@ -92,15 +92,21 @@ export default function Todo() {
     async function completeTask(taskId) {
 
         try {
-            let update_task = await fetch(`https://to-do-app-henna-sigma.vercel.app/update/completetask`, {
+            // https://to-do-app-henna-sigma.vercel.app/update/completetask
+            let update_task = await fetch("https://to-do-app-henna-sigma.vercel.app/update/completetask", {
                 method: "PUT",
                 headers: {
                     "Content-type": "application/json"
                 },
                 body: JSON.stringify([{ taskId: taskId }, { completeTask: !complete }])
             })
+            if (update_task.ok) {
+                let response = await update_task.json()
+
+            }
             setComplete(!complete)
-        } catch (err) {
+        }
+        catch (err) {
             setFail(false)
             setData("Server can not respond")
         }
