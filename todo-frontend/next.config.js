@@ -4,7 +4,7 @@ const nextConfig = {
         return [
           {
             // matching all API routes
-            source: "/api/(.*)",
+            source: "https://to-do-app-henna-sigma.vercel.app/",
             headers: [
               { key: "Access-Control-Allow-Credentials", value: "true" },
               { key: "Access-Control-Allow-Origin", value: "*" },
