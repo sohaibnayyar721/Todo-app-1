@@ -27,7 +27,7 @@ export default function Todo() {
 
         async function getData() {
             try {
-                let taskData = await fetch("https://to-do-app-henna-sigma.vercel.app/")
+                let taskData = await fetch("https://todo-app-server-eight.vercel.app/")
                 if (!taskData.ok) {
                     alert("api error")
                 }
@@ -56,7 +56,7 @@ export default function Todo() {
             alert('please add task')
         }
         else {
-            let add_task = await fetch('https://to-do-app-henna-sigma.vercel.app/addTask', {
+            let add_task = await fetch('https://todo-app-server-eight.vercel.app/addTask', {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json"
@@ -70,7 +70,7 @@ export default function Todo() {
     async function delteTask(taskId) {
         try {
 
-            let delete_task = await fetch(`https://to-do-app-henna-sigma.vercel.app/${taskId}`, {
+            let delete_task = await fetch(`https://todo-app-server-eight.vercel.app/${taskId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-type": "application/json"
@@ -93,7 +93,7 @@ export default function Todo() {
 
         try {
             // https://to-do-app-henna-sigma.vercel.app/update/completetask
-            let update_task = await fetch("https://to-do-app-henna-sigma.vercel.app/update/completetask", {
+            let update_task = await fetch("https://todo-app-server-eight.vercel.app/update/completetask", {
                 method: "PUT",
                 headers: {
                     "Content-type": "application/json"

@@ -61,7 +61,7 @@ function Modal(props) {
 
             try {
 
-                let update_task = await fetch(`https://to-do-app-henna-sigma.vercel.app/${taskId}`, {
+                let update_task = await fetch(`https://todo-app-server-eight.vercel.app/${taskId}`, {
                     method: "PUT",
                     headers: {
                         "Content-type": "application/json",
