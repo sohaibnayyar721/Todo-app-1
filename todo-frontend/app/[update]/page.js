@@ -94,9 +94,9 @@ function Modal(props) {
 
     return (
         <div className='overflow-hidden'>
-            {showLoading ?
+            {/* {showLoading ?
                 <Loader />
-                :
+                : */}
 
                 <div>
                     {
@@ -116,7 +116,7 @@ function Modal(props) {
                                     </div>
 
                                     <div className='flex gap-2 mt-6'>
-                                        <button className='border-[1px] text-white border-1  h-11 p-2 rounded  '
+                                        <button className='border-[1px] text-white border-1 w-14 h-11 p-2 rounded  '
                                             onClick={() => UpdateTask(taskInput)}
                                         >Ok</button>
 
@@ -129,7 +129,7 @@ function Modal(props) {
                             : <PageNotFound data={fail} />
                     }
                 </div>
-            }
+            {/* } */}
         </div>
     )
 }
