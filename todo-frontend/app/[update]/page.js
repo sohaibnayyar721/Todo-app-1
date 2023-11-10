@@ -94,9 +94,9 @@ function Modal(props) {
 
     return (
         <div className='overflow-hidden'>
-            {/* {showLoading ?
+            {showLoading ?
                 <Loader />
-                : */}
+                :
 
                 <div>
                     {
@@ -129,7 +129,7 @@ function Modal(props) {
                             : <PageNotFound data={fail} />
                     }
                 </div>
-            {/* } */}
+            }
         </div>
     )
 }

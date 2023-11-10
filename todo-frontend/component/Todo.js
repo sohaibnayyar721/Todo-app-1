@@ -7,6 +7,7 @@ import PageNotFound from './PageNotFound';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
 import DoneIcon from '@mui/icons-material/Done';
+import ClearIcon from '@mui/icons-material/Clear';
 import Video from './Video';
 import Loader from './Loader';
 export default function Todo() {
@@ -101,18 +102,34 @@ export default function Todo() {
                 body: JSON.stringify([{ taskId: taskId }, { completeTask: !complete }])
             })
             setComplete(!complete)
+            setshowTickbtn(!showTickbtn)
         } catch (err) {
             setFail(false)
             setData("Server can not respond")
             console.log(err)
         }
-
-
-
-
     }
 
-
+    async function clear(taskId){
+        try {
+            // https://todo-app-server-eight.vercel.app
+            let update_task = await fetch("https://todo-app-server-eight.vercel.app/update/completetask", {
+                method: "PUT",
+                headers: {
+                    "Content-type": "application/json"
+                },
+                body: JSON.stringify([{ taskId: taskId }, { completeTask: !complete }])
+            })
+            setComplete(!complete)
+            setshowTickbtn(!showTickbtn)
+        } catch (err) {
+            setFail(false)
+            setData("Server can not respond")
+            console.log(err)
+        }
+        
+    }
+    let [showTickbtn, setshowTickbtn] = useState(true)
     return (
 
         <div>
@@ -127,7 +144,9 @@ export default function Todo() {
                                     <h1 className='font-medium text-3xl text-white text-center'>Todo App</h1>
                                     <div className='w-full flex flex-col  mt-8 items-center justify-center gap-4 md:flex-row md:gap-3'>
                                         <input className='text-black w-full h-10 p-2 rounded focus:outline-none' placeholder='enter task' onChange={(e) => { setTaskInput(e.target.value) }}></input>
-                                        <button className='rounded w-24 h-10 border-[1px] text-white' onClick={() => addtask(taskInput)}>Add</button>
+                                        <button className='rounded w-24 h-10 border-[1px] text-white'
+                                            onClick={() => addtask(taskInput)}
+                                        >Add</button>
                                     </div>
                                     {
                                         task.map((tasks) => (
@@ -138,7 +157,13 @@ export default function Todo() {
                                                 <div className='flex gap-3 '>
                                                     <EditNoteIcon onClick={() => updateTask(tasks._id)} className='text-white scale-150 focus:hover' />
                                                     <DeleteIcon onClick={() => delteTask(tasks._id)} className='text-white scale-145' />
-                                                    <DoneIcon onClick={() => completeTask(tasks._id)} className='text-white scale-145' />
+
+                                                    {
+                                                        showTickbtn ?
+                                                            <DoneIcon onClick={() => completeTask(tasks._id)} className='text-white scale-145' /> :
+                                                            <ClearIcon onClick={() => clear(tasks._id)} className='text-white scale-145' />
+                                                    }
+
                                                 </div>
                                             </div>
                                         ))
